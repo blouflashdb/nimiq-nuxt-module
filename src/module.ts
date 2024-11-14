@@ -3,9 +3,8 @@ import wasm from 'vite-plugin-wasm'
 import defu from 'defu'
 import { name, version } from '../package.json'
 
-// Module options TypeScript interface definition
 export interface ModuleOptions {
-  network: 'TestAlbatross' | 'DevAlbatross'
+  network: 'TestAlbatross' | 'DevAlbatross' | 'MainAlbatross'
   seedNodes: string[]
   logLevel: 'trace' | 'debug' | 'info' | 'warn' | 'error'
 }
