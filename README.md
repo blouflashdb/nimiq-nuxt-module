@@ -5,7 +5,7 @@
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-A Nuxt module that lets you use the Nimiq Client without configuration.
+A Nuxt module that lets you use the Nimiq Light Client without configuration.
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
 - [🏀 Online playground](https://stackblitz.com/github/blouflashdb/nimiq-nuxt-module?file=playground%2Fapp.vue)
