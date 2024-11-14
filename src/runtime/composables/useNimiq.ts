@@ -1,9 +1,9 @@
 import { readonly, ref } from 'vue'
-import * as Nimiq from '@nimiq/core'
+import { ClientConfiguration, Client } from '@nimiq/core'
 import { useRuntimeConfig } from '#imports'
 import type { ModuleOptions } from '~/src/module'
 
-let clientPromise: Promise<Nimiq.Client>
+let clientPromise: Promise<Client>
 
 export function useNimiq() {
   const options = useRuntimeConfig().public.nimiq as ModuleOptions
@@ -13,12 +13,12 @@ export function useNimiq() {
 
   function initializeClient() {
     clientPromise = clientPromise || (() => {
-      const config = new Nimiq.ClientConfiguration()
+      const config = new ClientConfiguration()
 
       config.network(options.network)
       config.seedNodes(options.seedNodes)
       config.logLevel(options.logLevel)
-      return Nimiq.Client.create(config.build())
+      return Client.create(config.build())
     })()
   }
 
