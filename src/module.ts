@@ -4,9 +4,9 @@ import defu from 'defu'
 import { name, version } from '../package.json'
 
 export interface ModuleOptions {
-  network: 'TestAlbatross' | 'DevAlbatross' | 'MainAlbatross'
-  seedNodes: string[]
-  logLevel: 'trace' | 'debug' | 'info' | 'warn' | 'error'
+  network?: 'TestAlbatross' | 'DevAlbatross' | 'MainAlbatross'
+  seedNodes?: string[]
+  logLevel?: 'trace' | 'debug' | 'info' | 'warn' | 'error'
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -19,14 +19,6 @@ export default defineNuxtModule<ModuleOptions>({
     },
   },
   defaults: {
-    network: 'TestAlbatross',
-    seedNodes: [
-      '/dns4/seed1.pos.nimiq-testnet.com/tcp/8443/wss',
-      '/dns4/seed2.pos.nimiq-testnet.com/tcp/8443/wss',
-      '/dns4/seed3.pos.nimiq-testnet.com/tcp/8443/wss',
-      '/dns4/seed4.pos.nimiq-testnet.com/tcp/8443/wss',
-    ],
-    logLevel: 'info',
   },
   setup(_options, _nuxt) {
     _nuxt.options.vite.plugins = _nuxt.options.vite.plugins ?? []

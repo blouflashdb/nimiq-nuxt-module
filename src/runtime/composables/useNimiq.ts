@@ -1,5 +1,5 @@
 import { readonly, ref } from 'vue'
-import { ClientConfiguration, Client } from '@nimiq/core'
+import { ClientConfiguration, Client, type ConsensusState } from '@nimiq/core'
 import { useRuntimeConfig } from '#imports'
 import type { ModuleOptions } from '~/src/module'
 
@@ -8,16 +8,21 @@ let clientPromise: Promise<Client>
 export function useNimiq() {
   const options = useRuntimeConfig().public.nimiq as ModuleOptions
 
-  const consensusRef = ref('connecting')
+  const consensusRef = ref<ConsensusState>('connecting')
   const peerCountRef = ref(0)
+  const headBlockHeightRef = ref(0)
 
   function initializeClient() {
     clientPromise = clientPromise || (() => {
       const config = new ClientConfiguration()
 
-      config.network(options.network)
-      config.seedNodes(options.seedNodes)
-      config.logLevel(options.logLevel)
+      if (options.network)
+        config.network(options.network)
+      if (options.seedNodes)
+        config.seedNodes(options.seedNodes)
+      if (options.logLevel)
+        config.logLevel(options.logLevel)
+
       return Client.create(config.build())
     })()
   }
@@ -38,13 +43,23 @@ export function useNimiq() {
     })
   }
 
+  function initializeHeadCountListener() {
+    clientPromise.then((client) => {
+      client.addHeadChangedListener(async (hash) => {
+        headBlockHeightRef.value = (await client.getBlock(hash)).height
+      })
+    })
+  }
+
   initializeClient()
   initializeConsensusListener()
   initializePeerCountListener()
+  initializeHeadCountListener()
 
   return {
     clientPromise,
     consensus: readonly(consensusRef),
     peerCount: readonly(peerCountRef),
+    headBlockHeight: readonly(headBlockHeightRef),
   }
 }
