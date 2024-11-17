@@ -1,6 +1,6 @@
 {
   "name": "nimiq-nuxt-module",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Nuxt module for Nimiq Core",
   "repository": "blouflashdb/nimiq-nuxt-module",
   "license": "MIT",

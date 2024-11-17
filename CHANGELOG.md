@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.5
+
+[compare changes](https://github.com/blouflashdb/nimiq-nuxt-module/compare/v0.0.4...v0.0.5)
+
+### 🏡 Chore
+
+- **npm:** Fix lock file ([e05ce95](https://github.com/blouflashdb/nimiq-nuxt-module/commit/e05ce95))
+- **release:** V0.0.4 ([f26c5e1](https://github.com/blouflashdb/nimiq-nuxt-module/commit/f26c5e1))
+
+### ❤️ Contributors
+
+- Blouflashdb ([@blouflashdb](http://github.com/blouflashdb))
+
 ## v0.0.4
 
 [compare changes](https://github.com/blouflashdb/nimiq-nuxt-module/compare/v0.0.3...v0.0.4)
