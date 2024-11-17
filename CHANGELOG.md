@@ -1,6 +1,22 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/blouflashdb/nimiq-nuxt-module/compare/v0.0.3...v0.0.4)
+
+### 🏡 Chore
+
+- **release:** V0.0.3 ([222b826](https://github.com/blouflashdb/nimiq-nuxt-module/commit/222b826))
+- Use explicit import from @nimiq/core, remove unused file ([094aa3b](https://github.com/blouflashdb/nimiq-nuxt-module/commit/094aa3b))
+- Add 'MainAlbatross' as possible network ([d68aed4](https://github.com/blouflashdb/nimiq-nuxt-module/commit/d68aed4))
+- Use defaults from ClientConfiguration constructor, feat: add headBlockHeight api ([a5f1fcc](https://github.com/blouflashdb/nimiq-nuxt-module/commit/a5f1fcc))
+- **npm:** Fix lock file ([e05ce95](https://github.com/blouflashdb/nimiq-nuxt-module/commit/e05ce95))
+
+### ❤️ Contributors
+
+- Blouflashdb ([@blouflashdb](http://github.com/blouflashdb))
+
 ## v0.0.3
 
 [compare changes](https://github.com/blouflashdb/nimiq-nuxt-module/compare/v0.0.2...v0.0.3)
